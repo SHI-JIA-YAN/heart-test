@@ -23,19 +23,21 @@ window.onload = function () {
   const maxCategory = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
   let imageUrl;
 
+  
+  const isMobile = window.innerWidth <= 768; 
   // 設定圖片 URL
   switch (maxCategory) {
     case 'influencer':
-      imageUrl = 'images/final-result/influencer2.png';
+      imageUrl = isMobile ? 'images/final-result/influencer-mobile.jpg' : 'images/final-result/influencer2.jpg';
       break;
     case 'nature':
-      imageUrl = 'images/final-result/nature2.png';
+      imageUrl = isMobile ? 'images/final-result/nature-mobile.jpg' : 'images/final-result/nature2.jpg';
       break;
     case 'nostalgia':
-      imageUrl = 'images/final-result/nostalgia2.png';
+      imageUrl = isMobile ? 'images/final-result/nostalgia-mobile.jpg' : 'images/final-result/nostalgia2.jpg';
       break;
     case 'foodie':
-      imageUrl = 'images/final-result/foodie2.png';
+      imageUrl = isMobile ? 'images/final-result/foodie-mobile.jpg' : 'images/final-result/foodie2.jpg';
       break;
     default:
       return; // 沒有匹配，則退出
